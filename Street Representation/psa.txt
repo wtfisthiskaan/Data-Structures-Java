@@ -1,0 +1,36 @@
+Problem Solution Approach
+As I understand, this homework have a goal that teach applying basic
+OOP principles. In general there was less algorithm parts, and more
+concepts. I had to solve how to handle 2 side in one street situation.
+
+I define a class Building which represents all buildings in one class.
+The 3 types of buildings have same attributes such as(position,
+length). And I defined 'type' variable to get which type I work
+at the moment. The playground part is simple because playground
+have same attributes and have less elements.
+
+I defined Street Class, this class has double array buildings.
+buildings' first row represents a side, second row represents 
+another side. It does not have an importance anyway, because
+I use it in skyline silhouette part and all 2 views are same.
+The other parts have basic algorithm approaches and does not 
+have anything different but for loops.
+
+Skyline Silhouette Part
+
+Firstly I defined array 'maxHeights' filled with all 0's with
+size of 'length of street'.
+And suppose that we have building with position=10 and height=5,
+from 10th element to it's length+10 all elements become 5.
+If next building have same values and bigger height, elements
+changes. If it have smaller height, it does not change because
+it does not effect silhouette anyway.
+
+I defined a double array which has maximum of maxHeight array
+with 'length of street' columns. If there is 0 on maxHeight arr,
+last row's elements filled with '_'. If it has bigger height on maxHeight
+array, it jumps to upper, and draw '_'.
+After that if silhouette double array has jumps, such as 0->20
+it draws '|' 0 to 20 with columns elements.
+If jump is to the down, it draws it to the lower indexes.
+And function prints this double array.
