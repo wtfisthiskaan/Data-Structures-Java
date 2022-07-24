@@ -1,0 +1,29 @@
+In the first question, I wrote a method createBST. Method takes a structured binary tree
+and array. Method first searches for how many nodes on the right, and on the left of current
+node. After it decides how many elements are bigger and smaller, it searches for element in
+array. In example if element is 'x', if array has 2 elements smaller than 'x' and it is total
+nodes of head's left side, it decides the element is 'x'. After putting 'x' in BST, array
+divides by 2 parts. One call been done for smallers, other call been done for biggers.
+And right side and left side goes with it as a parameter.
+
+
+Theoretical run time analysis: T(n) = 2T(n/2) + n^2*logN
+
+In the second question, I wrote a method convert_avl. Method decides if head nodes' right  and
+left heights have difference bigger than 1. If it is, it decides the way tree should rotate.
+If it right imbalanced, it does right rotation. Otherwise, it does left rotation.
+
+Therotical run time analysis: T(n) = T(n-1) + O(n)
+					=O(n^2)
+
+In the third question, it is based skiplist except 2 rule, First is upper level insertions
+is done by tall distances of element. Left distance is starts with 0. Loop starts with head and 
+gets next in every iteration, and if there is taller element, left distance set by 0,otherwise
+incremented by one. Right distance have same issue,if it finds taller element, breaks loop.
+and probability decided with this way.
+Second rule is in every 10 element level incremented by one and taller elements get taller
+by 1 level. The array in SkipNode is reallocated , and taller elements' last level incremented
+by 1.
+
+Thoretical run time analysis(Insertion): O(log(n)) in average case
+Thoretical run time analysis(Level Up): O(n^2)
